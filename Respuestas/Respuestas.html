@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Respuestas.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuestas de Git y GitHub.</title>
+</head>
+<body>
+    <h1><u>Git y GitHub.</u></h1>
+    <h2><a href="https://la35.net/assets/files/practicas/proyecto-p2.pdf" target="_blank">Guia de ejercicios.</a></h2>
+    <br>
+    <ol>
+        <li>Por un lado se dice que Git es un SCM, y por otro un VCS. ¿A qué hacen referencia estos acrónimos? Citar otros ejemplos de programas que hagan lo mismo que Git.</li>
+        <p><b>VCS</b> = Version Control System. <br>
+        <b>SCM</b> = Source Code Management. <br>
+        Ejemplos: SVN, CVS, Mercurial, Perforce.
+        </p>
+        <br>
+        <li>¿Cuáles son los 3 estados posibles de un archivo en Git?</li>
+        <p><b>
+        Working Directory <br>
+        Staging Area = Index <br>
+        Repository
+        </b></p>
+        <br>
+        <li>¿En qué archivo suele guardar Git su configuración? ¿Cómo podemos ver la configuración que está usando Git en la línea de comandos?</li>
+        <p><b>
+            ~/.gitconfig o .git/config <br>
+            git config --list
+        </b></p>
+        <br>
+        <li>¿Cómo podemos obtener ayuda de Git para algún comando en particular?</li>
+        <p><b>
+            man git -config <br>
+            git help config <br>
+            git config --help <br>
+            git config -h 
+        </b></p>
+        <br>
+        <li>Completar los espacios en blanco.</li>
+        <ul>
+            <li><b>git add</b> agrega archivos al próximo commit.</li>
+            <li>El comando git <b>log</b> muestra un registro con los commits de un <b>repositorio</b>.</li>
+            <li><b>git init</b> crea un repositorio en el directorio de trabajo.</li>
+            <li>Para subir un <b>repositorio</b> local a uno remoto usamos git <b>push</b>.</li>
+            <li>Las 2 maneras de obtener un repositorio de Git son son o usando <b>git init</b> en un directorio, o <b>clonando</b> un repositorioexistente con <b>git clone</b>.</li>
+            <li>Si quiero hacer cambios en un <b>repositorio</b> compartido por un equipo de trabajo es conveniente hacerlos en una <b>rama</b>.</li>
+            <li>Cuando fusionamos 2 ramas puede haber un <b>conflicto</b> si el mismo <b>archivo</b> fue modificado en ambas ramas.</li>
+            <li>Para resolver un conflicto de <b>merge</b> hay que editar el <b>archivo</b> que genera el conflicto y marcarlo como resuelto con <b>git add</b>.</li>
+            <li>No podemos realizar un <b>push</b> a un remoto si nuestra copia local no está actualizada con los últimos <b>cambios</b> del repositorio remoto. En ese caso tendremos que realizar un <b>pull</b> primero antes de subir nuestro trabajo.</li>
+        </ul>
+        <br>
+        <li>Completar lo que falta en los siguientes comandos de Git.</li>
+        <ul>
+            <li>git add <b>.</b> (agrega todos los archivos del directorio staging area).</li>
+            <li>git status <b>-s</b> (versión abreviada del estado del repositorio).</li>
+            <li>git <b>log</b> -10 (ver los últimos 10 commits).</li>
+            <li>git commit <b>--amend</b> (arregla el último commit).</li>
+            <li>git <b>add index.html css</b> (agrega index.html y el directorio css al index).</li>
+            <li>git checkout <b>-b new branch</b> (crea y cambia a una rama llamada new-branch).</li>
+            <li>git <b>remote -v</b> (muestra las URLs asociadas con cada remoto).</li>
+            <li>git <b>pull</b> (sincroniza la rama en la que estoy con la rama remota rastreada).</li>
+            <li>git <b>merge hotflix</b> (fusiona la rama hotflix con la rama en la que estoy parado).</li>
+        </ul>
+        <br>
+        <li>¿Qué comando de Git usarías para ver qué archivos están en el staging area?</li>
+        <p><b>git status</b></p>
+        <br>
+        <li>¿Cómo podemos ver un registro de los últimos 3 commits de un repositorio?</li>
+        <p><b>git log -3</b></p>
+        <br>
+        <li>¿Qué comando de Git usarías para agregar un archivo llamado LICENSE al próximo commit?</li>
+        <p><b>git add LICENSE</b></p>
+        <br>
+        <li>¿Cómo podemos hacer un commit en Git en un solo comando si no hay archivos nuevos para rastrear?</li>
+        <p><b>git commit -a</b></p>
+        <br>
+        <li>¿Cómo eliminar un remoto llamado gituhb?</li>
+        <p><b>git remote rm github</b></p>
+        <br>
+        <li>Borrar la rama llamada hotflix.</li>
+        <p><b>git branch -d hotflix</b></p>
+        <br>
+        <li>Mostrar un registro de commits de a uno por línea y dibujar un gráfico mostrando todas las ramas.</li>
+        <p><b>git log --oneline --decorate --graph --all</b></p>
+        <br>
+        <li>¿Cómo cambiar el mensaje del último commit?</li>
+        <p><b>git commit --amend -m</b></p>
+        <br>
+        <li>¿Cómo crear una rama llamda create-user-form y cambiar a esa rama en un sólo comando?</li>
+        <p><b>git checkout -b create-user-form</b></p>
+        <br>
+        <li>Subir la rama main del repositorio a un remoto llamado heroku. Setear la rama remota como "rastreada".</li>
+        <p><b>git push -u heroku main</b></p>
+        <br>
+        <li>Dar una lista de todas las ramas, incluyendo ramas remotas rastreadas.</li>
+        <p><b>git branch --a</b></p>
+        <br>
+        <li> Suponiendo que acabamos de hacer un commit en un repositorio local. Dar los comandos necesarios para agregar un nuevo remoto llamado work que apunte a https://github.com/user/repo.git. Luego subir el repositorio local al remoto recién creado. El repositorio local tiene sólo una rama llamada main.</li>
+        <p><b>
+            git remote add work https://github.com/user/repo.git <br>
+            git push -u work main
+        </b></p>
+        <br>
+        <li>Dar los comandos para configurar la identidad en git.</li>
+        <p><b>
+            git config --global user.name "nombre" <br>
+            git config --global user.email "mail"
+        </b></p>
+        <br>
+        <li>Dar los comandos para hacer un commit, agregando todos los archivos de trabajo al mismo.</li>
+        <p><b>
+            git add . <br>
+            git commit -m 
+        </b></p>
+        <br>
+        <li>Estamos trabajando en el archivo index.html en la rama master de nuestra web y nos piden que arreglemos urgente un error de tipeo en la pagina about.html y subamos la nueva versión al remoto. Lo que está en origin/master es la rama de “producción”. ¿Qué hacemos?</li>
+        <p><b>
+            git add index.html <br>
+            git commit -m <br>
+            git checkout -b aboutfix <br>
+            git add about.html <br>
+            git commit -m <br>
+            git push origin hotflix
+        </b></p>
+        <br>
+        <li> Estamos trabajando en la rama new-feature, estuvimos editando archivos pero de repente necesitamos volver a master y aplicar un parche de último momento a nuestra web. ¿Qué comandos de Git ejecutamos?</li>
+        <p><b>
+            git add new-feature <br>
+            git commit -m <br>
+            git checkout master <br>
+            git add master <br>
+            git commit -m 
+        </b></p>
+        <br>
+        <li> Estoy por hacer un commit con tres archivos: index.js, package.json y .env. Me arrepiento de los cambios en .env y decido hacer el commit pero dejando .env tal como estaba en el último commit. Los archivos ya están en el index. ¿Qué comandos ejecuto?</li>
+        <p><b>git reset HEAD.env</b></p>
+        <br>
+        <li>Crear un nuevo repositorio y dentro del mismo dos ramas más además de master. Crear un archivo diferente en cada rama y realizar un commit en cada una.</li>
+        <p><b>
+            mkdir "nuevo rep" <br>
+            cd "nuevo rep" <br>
+            git init <br>
+            git branch rama1 <br>
+            git branch rama2 <br>
+            git checkout rama1 <br>
+            touch archivo1.txt <br>
+            git add archivo1.txt <br>
+            git commit -m "Primer commit" <br>
+            git checkout rama2 <br>
+            touch archivo2.txt <br>
+            git add archivo2.txt <br>
+            git commit -m "Segundo commit" <br>
+            git checkout master
+        </b></p>
+        <br>
+        <li>Indicar verdadero o falso.</li>
+            <ul>
+                <li>Podemos usar comodines con git add. <b>V</b></li>
+                <li>Git guarda los cambios que hacemos a lo archivos automáticamente. <b>F</b></li>
+                <li>El comando git pull sirve para que el repositorio en el que estamos trabajando se sincronize con el repositorio remoto. <b>V</b></li>
+                <li>Una línea en el .gitignore que diga !a.out significa que no estamos rastreando el archivo a.out. <b>F</b></li>
+                <li>Staging area e index son sinónimos. <b>V</b></li>
+                <li>Cuándo editamos un archivo que ya preparamos los cambios se reflejan automáticamente en el área de preparación. <b>F</b></li>
+                <li>La única manera de obtener un repositorio de Git es con git init. <b>F</b></li>
+                <li>Si dos personas trabajan en la misma rama del mismo remoto pero en distintos archivos es imposible generar un conflicto de merge. <b>V</b></li>
+                <li>Git no me deja cambiar de rama con el árbol de trabajo(working tree) modificado. <b>F</b></li>
+                <li>Los forks y los PRs son características de GitHub, no de Git. <b>V</b></li>
+                <li>Para colaborar en un proyecto al que no tenemos acceso de escritura podemos hacer un pull request y luego un fork. <b>F</b></li>
+            </ul>
+        <br>
+        <li>¿Qué comando sirve para pasar archivos del staging area al repositorio?</li>
+        <p><b>git commit</b></p>
+        <br>
+        <li>El comando para mostrar la diferencia entre lo que está preparado(staged) y lo que está en el directorio de trabajo es:</li>
+        <p><b>git diff --staged</b></p>
+        <br>
+        <li>¿Cuál de los siguientes comandos sirve para cambiar a una rama llamada feature?</li>
+        <p><b>
+            git switch feature <br>
+            git checkout feature <br>
+            git checkout -b feature  
+        </b></p>
+        <br>
+        <li>¿Qué comando usamos para bajar un repositorio de GitHub a nuestra computadora?</li>
+        <p><b>git clone https://github.com/user/repo</b></p>
+        <br>
+        <li>Los archivos que van a entrar en el próximo commit están en:</li>
+        <p><b>el staging area</b></p>
+        <br>
+        <li>¿Qué comando sirve para renombrar una rama en Git?</li>
+        <p><b>git branch -m</b></p>
+        <br>
+        <li>¿Qué comando sirve para mostrar el parche de cada commit?</li>
+        <p><b>git log -p</b></p>
+        <br>
+        <li>¿Qué es lo que hace el coamando git clone?</li>
+        <p><b>
+            Crea una copia local de un repositorio. <br>
+            Crea un directorio de trabajo.
+        </b></p>
+        <br>
+        <li>¿Qué comando sirve para quitar un archivo del staging area?</li>
+        <p><b>git restore --staged archivo</b></p>
+        <br>
+        <li>Estamos en la rama feature y recién hicimos un commit. Ahora queremos volvera master y fusionar ambas ramas. ¿Qué comando usamos?</li>
+        <p><b>git switch master; git merge feature</b></p>
+        <br>
+        <li>¿Qué comando sirve para ver un registro de los parches introducidos por cada commit en el archivo index.html?</li>
+        <p><b>git log -p index.html</b></p>
+    </ol>
+</body>
+</html>
